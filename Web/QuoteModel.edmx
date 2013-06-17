@@ -1,0 +1,1630 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="QuotesDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="QuotesDBModelStoreContainer">
+          <EntitySet Name="aspnet_Membership" EntityType="QuotesDBModel.Store.aspnet_Membership" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="aspnet_Users" EntityType="QuotesDBModel.Store.aspnet_Users" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Config" EntityType="QuotesDBModel.Store.Config" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Discount" EntityType="QuotesDBModel.Store.Discount" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DiscountPerState" EntityType="QuotesDBModel.Store.DiscountPerState" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Driver" EntityType="QuotesDBModel.Store.Driver" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DriverDiscounts" EntityType="QuotesDBModel.Store.DriverDiscounts" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Quote" EntityType="QuotesDBModel.Store.Quote" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="QuoteDiscounts" EntityType="QuotesDBModel.Store.QuoteDiscounts" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="State" EntityType="QuotesDBModel.Store.State" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Vehicle" EntityType="QuotesDBModel.Store.Vehicle" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="VehicleDiscounts" EntityType="QuotesDBModel.Store.VehicleDiscounts" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="vw_aspnet_MembershipUsers" EntityType="QuotesDBModel.Store.vw_aspnet_MembershipUsers" store:Type="Views" store:Schema="dbo" store:Name="vw_aspnet_MembershipUsers">
+            <DefiningQuery>SELECT 
+      [vw_aspnet_MembershipUsers].[UserId] AS [UserId], 
+      [vw_aspnet_MembershipUsers].[PasswordFormat] AS [PasswordFormat], 
+      [vw_aspnet_MembershipUsers].[MobilePIN] AS [MobilePIN], 
+      [vw_aspnet_MembershipUsers].[Email] AS [Email], 
+      [vw_aspnet_MembershipUsers].[LoweredEmail] AS [LoweredEmail], 
+      [vw_aspnet_MembershipUsers].[PasswordQuestion] AS [PasswordQuestion], 
+      [vw_aspnet_MembershipUsers].[PasswordAnswer] AS [PasswordAnswer], 
+      [vw_aspnet_MembershipUsers].[IsApproved] AS [IsApproved], 
+      [vw_aspnet_MembershipUsers].[IsLockedOut] AS [IsLockedOut], 
+      [vw_aspnet_MembershipUsers].[CreateDate] AS [CreateDate], 
+      [vw_aspnet_MembershipUsers].[LastLoginDate] AS [LastLoginDate], 
+      [vw_aspnet_MembershipUsers].[LastPasswordChangedDate] AS [LastPasswordChangedDate], 
+      [vw_aspnet_MembershipUsers].[LastLockoutDate] AS [LastLockoutDate], 
+      [vw_aspnet_MembershipUsers].[FailedPasswordAttemptCount] AS [FailedPasswordAttemptCount], 
+      [vw_aspnet_MembershipUsers].[FailedPasswordAttemptWindowStart] AS [FailedPasswordAttemptWindowStart], 
+      [vw_aspnet_MembershipUsers].[FailedPasswordAnswerAttemptCount] AS [FailedPasswordAnswerAttemptCount], 
+      [vw_aspnet_MembershipUsers].[FailedPasswordAnswerAttemptWindowStart] AS [FailedPasswordAnswerAttemptWindowStart], 
+      [vw_aspnet_MembershipUsers].[Comment] AS [Comment], 
+      [vw_aspnet_MembershipUsers].[ApplicationId] AS [ApplicationId], 
+      [vw_aspnet_MembershipUsers].[UserName] AS [UserName], 
+      [vw_aspnet_MembershipUsers].[MobileAlias] AS [MobileAlias], 
+      [vw_aspnet_MembershipUsers].[IsAnonymous] AS [IsAnonymous], 
+      [vw_aspnet_MembershipUsers].[LastActivityDate] AS [LastActivityDate]
+      FROM [dbo].[vw_aspnet_MembershipUsers] AS [vw_aspnet_MembershipUsers]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vw_Drivers" EntityType="QuotesDBModel.Store.vw_Drivers" store:Type="Views" store:Schema="dbo" store:Name="vw_Drivers">
+            <DefiningQuery>SELECT 
+      [vw_Drivers].[ID] AS [ID], 
+      [vw_Drivers].[FirstName] AS [FirstName], 
+      [vw_Drivers].[LastName] AS [LastName], 
+      [vw_Drivers].[Ssn] AS [Ssn], 
+      [vw_Drivers].[DateOfBirth] AS [DateOfBirth], 
+      [vw_Drivers].[Age] AS [Age], 
+      [vw_Drivers].[DriverLicenseNumber] AS [DriverLicenseNumber], 
+      [vw_Drivers].[DLState] AS [DLState], 
+      [vw_Drivers].[StateCode] AS [StateCode], 
+      [vw_Drivers].[SafeDrivingSchool] AS [SafeDrivingSchool], 
+      [vw_Drivers].[QuoteID] AS [QuoteID]
+      FROM [dbo].[vw_Drivers] AS [vw_Drivers]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vw_Quotes" EntityType="QuotesDBModel.Store.vw_Quotes" store:Type="Views" store:Schema="dbo" store:Name="vw_Quotes">
+            <DefiningQuery>SELECT 
+      [vw_Quotes].[ID] AS [ID], 
+      [vw_Quotes].[CustomerFirstName] AS [CustomerFirstName], 
+      [vw_Quotes].[CustomerLastName] AS [CustomerLastName], 
+      [vw_Quotes].[StateCode] AS [StateCode], 
+      [vw_Quotes].[Price] AS [Price], 
+      [vw_Quotes].[Vehicles] AS [Vehicles], 
+      [vw_Quotes].[Drivers] AS [Drivers], 
+      [vw_Quotes].[UserId] AS [UserId], 
+      [vw_Quotes].[DateCreated] AS [DateCreated], 
+      [vw_Quotes].[Incomplete] AS [Incomplete]
+      FROM [dbo].[vw_Quotes] AS [vw_Quotes]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vw_Vehicles" EntityType="QuotesDBModel.Store.vw_Vehicles" store:Type="Views" store:Schema="dbo" store:Name="vw_Vehicles">
+            <DefiningQuery>SELECT 
+      [vw_Vehicles].[PrimaryDriverName] AS [PrimaryDriverName], 
+      [vw_Vehicles].[ID] AS [ID], 
+      [vw_Vehicles].[Vin] AS [Vin], 
+      [vw_Vehicles].[Make] AS [Make], 
+      [vw_Vehicles].[Model] AS [Model], 
+      [vw_Vehicles].[Year] AS [Year], 
+      [vw_Vehicles].[CurrentValue] AS [CurrentValue], 
+      [vw_Vehicles].[PrimaryDriver] AS [PrimaryDriver], 
+      [vw_Vehicles].[AnnualMileage] AS [AnnualMileage], 
+      [vw_Vehicles].[DaysDrivenPerWeek] AS [DaysDrivenPerWeek], 
+      [vw_Vehicles].[MilesDrivenToWork] AS [MilesDrivenToWork], 
+      [vw_Vehicles].[AntiTheft] AS [AntiTheft], 
+      [vw_Vehicles].[AntiLock] AS [AntiLock], 
+      [vw_Vehicles].[DaytimeRunningLights] AS [DaytimeRunningLights], 
+      [vw_Vehicles].[DifferentGarageAddress] AS [DifferentGarageAddress], 
+      [vw_Vehicles].[PassiveRestraints] AS [PassiveRestraints], 
+      [vw_Vehicles].[ReducedUsedDiscount] AS [ReducedUsedDiscount], 
+      [vw_Vehicles].[QuoteId] AS [QuoteId]
+      FROM [dbo].[vw_Vehicles] AS [vw_Vehicles]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK__aspnet_Me__UserI__22AA2996" Association="QuotesDBModel.Store.FK__aspnet_Me__UserI__22AA2996">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DiscountPerState_Discount" Association="QuotesDBModel.Store.FK_DiscountPerState_Discount">
+            <End Role="Discount" EntitySet="Discount" />
+            <End Role="DiscountPerState" EntitySet="DiscountPerState" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DiscountPerState_State" Association="QuotesDBModel.Store.FK_DiscountPerState_State">
+            <End Role="State" EntitySet="State" />
+            <End Role="DiscountPerState" EntitySet="DiscountPerState" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DiscountsAppliedToDriver_DiscountPerState" Association="QuotesDBModel.Store.FK_DiscountsAppliedToDriver_DiscountPerState">
+            <End Role="DiscountPerState" EntitySet="DiscountPerState" />
+            <End Role="DriverDiscounts" EntitySet="DriverDiscounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DiscountsAppliedToDriver_Person" Association="QuotesDBModel.Store.FK_DiscountsAppliedToDriver_Person">
+            <End Role="Driver" EntitySet="Driver" />
+            <End Role="DriverDiscounts" EntitySet="DriverDiscounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DiscountsAppliedToQuote_DiscountPerState" Association="QuotesDBModel.Store.FK_DiscountsAppliedToQuote_DiscountPerState">
+            <End Role="DiscountPerState" EntitySet="DiscountPerState" />
+            <End Role="QuoteDiscounts" EntitySet="QuoteDiscounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DiscountsAppliedToQuote_Quote" Association="QuotesDBModel.Store.FK_DiscountsAppliedToQuote_Quote">
+            <End Role="Quote" EntitySet="Quote" />
+            <End Role="QuoteDiscounts" EntitySet="QuoteDiscounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DiscountsAppliedToVehicle_DiscountPerState" Association="QuotesDBModel.Store.FK_DiscountsAppliedToVehicle_DiscountPerState">
+            <End Role="DiscountPerState" EntitySet="DiscountPerState" />
+            <End Role="VehicleDiscounts" EntitySet="VehicleDiscounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DiscountsAppliedToVehicle_Vehicle" Association="QuotesDBModel.Store.FK_DiscountsAppliedToVehicle_Vehicle">
+            <End Role="Vehicle" EntitySet="Vehicle" />
+            <End Role="VehicleDiscounts" EntitySet="VehicleDiscounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Driver_Quote" Association="QuotesDBModel.Store.FK_Driver_Quote">
+            <End Role="Quote" EntitySet="Quote" />
+            <End Role="Driver" EntitySet="Driver" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Driver_State1" Association="QuotesDBModel.Store.FK_Driver_State1">
+            <End Role="State" EntitySet="State" />
+            <End Role="Driver" EntitySet="Driver" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Quote_aspnet_Users" Association="QuotesDBModel.Store.FK_Quote_aspnet_Users">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="Quote" EntitySet="Quote" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Quote_State" Association="QuotesDBModel.Store.FK_Quote_State">
+            <End Role="State" EntitySet="State" />
+            <End Role="Quote" EntitySet="Quote" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Vehicle_Driver" Association="QuotesDBModel.Store.FK_Vehicle_Driver">
+            <End Role="Driver" EntitySet="Driver" />
+            <End Role="Vehicle" EntitySet="Vehicle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Vehicle_Quote" Association="QuotesDBModel.Store.FK_Vehicle_Quote">
+            <End Role="Quote" EntitySet="Quote" />
+            <End Role="Vehicle" EntitySet="Vehicle" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="aspnet_Membership">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="PasswordFormat" Type="int" Nullable="false" />
+          <Property Name="PasswordSalt" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="MobilePIN" Type="nvarchar" MaxLength="16" />
+          <Property Name="Email" Type="nvarchar" MaxLength="256" />
+          <Property Name="LoweredEmail" Type="nvarchar" MaxLength="256" />
+          <Property Name="PasswordQuestion" Type="nvarchar" MaxLength="256" />
+          <Property Name="PasswordAnswer" Type="nvarchar" MaxLength="128" />
+          <Property Name="IsApproved" Type="bit" Nullable="false" />
+          <Property Name="IsLockedOut" Type="bit" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="LastLoginDate" Type="datetime" Nullable="false" />
+          <Property Name="LastPasswordChangedDate" Type="datetime" Nullable="false" />
+          <Property Name="LastLockoutDate" Type="datetime" Nullable="false" />
+          <Property Name="FailedPasswordAttemptCount" Type="int" Nullable="false" />
+          <Property Name="FailedPasswordAttemptWindowStart" Type="datetime" Nullable="false" />
+          <Property Name="FailedPasswordAnswerAttemptCount" Type="int" Nullable="false" />
+          <Property Name="FailedPasswordAnswerAttemptWindowStart" Type="datetime" Nullable="false" />
+          <Property Name="Comment" Type="ntext" />
+        </EntityType>
+        <EntityType Name="aspnet_Users">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="LoweredUserName" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="MobileAlias" Type="nvarchar" MaxLength="16" />
+          <Property Name="IsAnonymous" Type="bit" Nullable="false" />
+          <Property Name="LastActivityDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Config">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Value" Type="nvarchar" Nullable="false" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Discount">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DiscountName" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="ScopeType" Type="nvarchar" Nullable="false" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="DiscountPerState">
+          <Key>
+            <PropertyRef Name="DiscountId" />
+            <PropertyRef Name="StateId" />
+          </Key>
+          <Property Name="DiscountId" Type="int" Nullable="false" />
+          <Property Name="StateId" Type="int" Nullable="false" />
+          <Property Name="Amount" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+        </EntityType>
+        <EntityType Name="Driver">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Ssn" Type="nchar" MaxLength="9" />
+          <Property Name="DateOfBirth" Type="date" Nullable="false" />
+          <Property Name="DriverLicenseNumber" Type="nvarchar" Nullable="false" MaxLength="15" />
+          <Property Name="DLState" Type="int" Nullable="false" />
+          <Property Name="SafeDrivingSchool" Type="bit" Nullable="false" />
+          <Property Name="QuoteID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DriverDiscounts">
+          <Key>
+            <PropertyRef Name="DiscountId" />
+            <PropertyRef Name="StateId" />
+            <PropertyRef Name="DriverId" />
+          </Key>
+          <Property Name="DiscountId" Type="int" Nullable="false" />
+          <Property Name="StateId" Type="int" Nullable="false" />
+          <Property Name="DriverId" Type="int" Nullable="false" />
+          <Property Name="AppliedDiscountValue" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+        </EntityType>
+        <EntityType Name="Quote">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerFirstName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="CustomerLastName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="City" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="StateId" Type="int" Nullable="false" />
+          <Property Name="Zip" Type="char" Nullable="false" MaxLength="5" />
+          <Property Name="Ssn" Type="char" MaxLength="10" />
+          <Property Name="DateOfBirth" Type="datetime" Nullable="false" />
+          <Property Name="Incomplete" Type="bit" Nullable="false" />
+          <Property Name="PreviousCarrier" Type="nvarchar" MaxLength="50" />
+          <Property Name="ClaimsInPast5Yrs" Type="bit" Nullable="false" />
+          <Property Name="HasMovingViolations" Type="bit" Nullable="false" />
+          <Property Name="HasLessThan3YrsDriving" Type="bit" Nullable="false" />
+          <Property Name="ForceMultiCarDiscount" Type="bit" Nullable="false" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Price" Type="decimal" Precision="10" Scale="2" />
+        </EntityType>
+        <EntityType Name="QuoteDiscounts">
+          <Key>
+            <PropertyRef Name="DiscountId" />
+            <PropertyRef Name="StateId" />
+            <PropertyRef Name="QuoteId" />
+          </Key>
+          <Property Name="DiscountId" Type="int" Nullable="false" />
+          <Property Name="StateId" Type="int" Nullable="false" />
+          <Property Name="QuoteId" Type="int" Nullable="false" />
+          <Property Name="AppliedDiscountValue" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+        </EntityType>
+        <EntityType Name="State">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="StateName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="StateCode" Type="char" Nullable="false" MaxLength="2" />
+        </EntityType>
+        <EntityType Name="Vehicle">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Vin" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Make" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Model" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Year" Type="int" Nullable="false" />
+          <Property Name="CurrentValue" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="PrimaryDriver" Type="int" Nullable="false" />
+          <Property Name="AnnualMileage" Type="int" />
+          <Property Name="DaysDrivenPerWeek" Type="tinyint" />
+          <Property Name="MilesDrivenToWork" Type="smallint" />
+          <Property Name="AntiTheft" Type="bit" Nullable="false" />
+          <Property Name="AntiLock" Type="bit" Nullable="false" />
+          <Property Name="DaytimeRunningLights" Type="bit" Nullable="false" />
+          <Property Name="DifferentGarageAddress" Type="bit" Nullable="false" />
+          <Property Name="PassiveRestraints" Type="bit" Nullable="false" />
+          <Property Name="ReducedUsedDiscount" Type="bit" Nullable="false" />
+          <Property Name="QuoteId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VehicleDiscounts">
+          <Key>
+            <PropertyRef Name="DiscountId" />
+            <PropertyRef Name="StateId" />
+            <PropertyRef Name="VehicleId" />
+          </Key>
+          <Property Name="DiscountId" Type="int" Nullable="false" />
+          <Property Name="StateId" Type="int" Nullable="false" />
+          <Property Name="VehicleId" Type="int" Nullable="false" />
+          <Property Name="AppliedDiscountValue" Type="decimal" Nullable="false" Precision="10" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'QuotesDB.dbo.vw_aspnet_MembershipUsers' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vw_aspnet_MembershipUsers">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="PasswordFormat" />
+            <PropertyRef Name="IsApproved" />
+            <PropertyRef Name="IsLockedOut" />
+            <PropertyRef Name="CreateDate" />
+            <PropertyRef Name="LastLoginDate" />
+            <PropertyRef Name="LastPasswordChangedDate" />
+            <PropertyRef Name="LastLockoutDate" />
+            <PropertyRef Name="FailedPasswordAttemptCount" />
+            <PropertyRef Name="FailedPasswordAttemptWindowStart" />
+            <PropertyRef Name="FailedPasswordAnswerAttemptCount" />
+            <PropertyRef Name="FailedPasswordAnswerAttemptWindowStart" />
+            <PropertyRef Name="ApplicationId" />
+            <PropertyRef Name="UserName" />
+            <PropertyRef Name="IsAnonymous" />
+            <PropertyRef Name="LastActivityDate" />
+          </Key>
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="PasswordFormat" Type="int" Nullable="false" />
+          <Property Name="MobilePIN" Type="nvarchar" MaxLength="16" />
+          <Property Name="Email" Type="nvarchar" MaxLength="256" />
+          <Property Name="LoweredEmail" Type="nvarchar" MaxLength="256" />
+          <Property Name="PasswordQuestion" Type="nvarchar" MaxLength="256" />
+          <Property Name="PasswordAnswer" Type="nvarchar" MaxLength="128" />
+          <Property Name="IsApproved" Type="bit" Nullable="false" />
+          <Property Name="IsLockedOut" Type="bit" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="LastLoginDate" Type="datetime" Nullable="false" />
+          <Property Name="LastPasswordChangedDate" Type="datetime" Nullable="false" />
+          <Property Name="LastLockoutDate" Type="datetime" Nullable="false" />
+          <Property Name="FailedPasswordAttemptCount" Type="int" Nullable="false" />
+          <Property Name="FailedPasswordAttemptWindowStart" Type="datetime" Nullable="false" />
+          <Property Name="FailedPasswordAnswerAttemptCount" Type="int" Nullable="false" />
+          <Property Name="FailedPasswordAnswerAttemptWindowStart" Type="datetime" Nullable="false" />
+          <Property Name="Comment" Type="ntext" />
+          <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="MobileAlias" Type="nvarchar" MaxLength="16" />
+          <Property Name="IsAnonymous" Type="bit" Nullable="false" />
+          <Property Name="LastActivityDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'QuotesDB.dbo.vw_Drivers' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vw_Drivers">
+          <Key>
+            <PropertyRef Name="ID" />
+            
+            
+            
+            
+            
+            
+            
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Ssn" Type="nchar" MaxLength="9" />
+          <Property Name="DateOfBirth" Type="date" Nullable="false" />
+          <Property Name="Age" Type="int" />
+          <Property Name="DriverLicenseNumber" Type="nvarchar" Nullable="false" MaxLength="15" />
+          <Property Name="DLState" Type="int" Nullable="false" />
+          <Property Name="StateCode" Type="char" MaxLength="2" />
+          <Property Name="SafeDrivingSchool" Type="bit" Nullable="false" />
+          <Property Name="QuoteID" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'QuotesDB.dbo.vw_Quotes' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vw_Quotes">
+          <Key>
+            <PropertyRef Name="ID" />
+            
+            
+            
+            
+            
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="CustomerFirstName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="CustomerLastName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="StateCode" Type="char" MaxLength="2" />
+          <Property Name="Price" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="Vehicles" Type="int" />
+          <Property Name="Drivers" Type="int" />
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="Incomplete" Type="bit" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'QuotesDB.dbo.vw_Vehicles' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vw_Vehicles">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Vin" />
+            <PropertyRef Name="Make" />
+            <PropertyRef Name="Model" />
+            <PropertyRef Name="Year" />
+            <PropertyRef Name="PrimaryDriver" />
+            <PropertyRef Name="AntiTheft" />
+            <PropertyRef Name="AntiLock" />
+            <PropertyRef Name="DaytimeRunningLights" />
+            <PropertyRef Name="DifferentGarageAddress" />
+            <PropertyRef Name="PassiveRestraints" />
+            <PropertyRef Name="ReducedUsedDiscount" />
+            <PropertyRef Name="QuoteId" />
+          </Key>
+          <Property Name="PrimaryDriverName" Type="nvarchar" MaxLength="151" />
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Vin" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Make" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Model" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Year" Type="int" Nullable="false" />
+          <Property Name="CurrentValue" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="PrimaryDriver" Type="int" Nullable="false" />
+          <Property Name="AnnualMileage" Type="int" />
+          <Property Name="DaysDrivenPerWeek" Type="tinyint" />
+          <Property Name="MilesDrivenToWork" Type="smallint" />
+          <Property Name="AntiTheft" Type="bit" Nullable="false" />
+          <Property Name="AntiLock" Type="bit" Nullable="false" />
+          <Property Name="DaytimeRunningLights" Type="bit" Nullable="false" />
+          <Property Name="DifferentGarageAddress" Type="bit" Nullable="false" />
+          <Property Name="PassiveRestraints" Type="bit" Nullable="false" />
+          <Property Name="ReducedUsedDiscount" Type="bit" Nullable="false" />
+          <Property Name="QuoteId" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__aspnet_Me__UserI__22AA2996">
+          <End Role="aspnet_Users" Type="QuotesDBModel.Store.aspnet_Users" Multiplicity="1" />
+          <End Role="aspnet_Membership" Type="QuotesDBModel.Store.aspnet_Membership" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="aspnet_Membership">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DiscountPerState_Discount">
+          <End Role="Discount" Type="QuotesDBModel.Store.Discount" Multiplicity="1" />
+          <End Role="DiscountPerState" Type="QuotesDBModel.Store.DiscountPerState" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Discount">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DiscountPerState">
+              <PropertyRef Name="DiscountId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DiscountPerState_State">
+          <End Role="State" Type="QuotesDBModel.Store.State" Multiplicity="1" />
+          <End Role="DiscountPerState" Type="QuotesDBModel.Store.DiscountPerState" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="State">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DiscountPerState">
+              <PropertyRef Name="StateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DiscountsAppliedToDriver_DiscountPerState">
+          <End Role="DiscountPerState" Type="QuotesDBModel.Store.DiscountPerState" Multiplicity="1" />
+          <End Role="DriverDiscounts" Type="QuotesDBModel.Store.DriverDiscounts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DiscountPerState">
+              <PropertyRef Name="DiscountId" />
+              <PropertyRef Name="StateId" />
+            </Principal>
+            <Dependent Role="DriverDiscounts">
+              <PropertyRef Name="DiscountId" />
+              <PropertyRef Name="StateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DiscountsAppliedToDriver_Person">
+          <End Role="Driver" Type="QuotesDBModel.Store.Driver" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="DriverDiscounts" Type="QuotesDBModel.Store.DriverDiscounts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Driver">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DriverDiscounts">
+              <PropertyRef Name="DriverId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DiscountsAppliedToQuote_DiscountPerState">
+          <End Role="DiscountPerState" Type="QuotesDBModel.Store.DiscountPerState" Multiplicity="1" />
+          <End Role="QuoteDiscounts" Type="QuotesDBModel.Store.QuoteDiscounts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DiscountPerState">
+              <PropertyRef Name="DiscountId" />
+              <PropertyRef Name="StateId" />
+            </Principal>
+            <Dependent Role="QuoteDiscounts">
+              <PropertyRef Name="DiscountId" />
+              <PropertyRef Name="StateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DiscountsAppliedToQuote_Quote">
+          <End Role="Quote" Type="QuotesDBModel.Store.Quote" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="QuoteDiscounts" Type="QuotesDBModel.Store.QuoteDiscounts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Quote">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="QuoteDiscounts">
+              <PropertyRef Name="QuoteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DiscountsAppliedToVehicle_DiscountPerState">
+          <End Role="DiscountPerState" Type="QuotesDBModel.Store.DiscountPerState" Multiplicity="1" />
+          <End Role="VehicleDiscounts" Type="QuotesDBModel.Store.VehicleDiscounts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DiscountPerState">
+              <PropertyRef Name="DiscountId" />
+              <PropertyRef Name="StateId" />
+            </Principal>
+            <Dependent Role="VehicleDiscounts">
+              <PropertyRef Name="DiscountId" />
+              <PropertyRef Name="StateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DiscountsAppliedToVehicle_Vehicle">
+          <End Role="Vehicle" Type="QuotesDBModel.Store.Vehicle" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="VehicleDiscounts" Type="QuotesDBModel.Store.VehicleDiscounts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vehicle">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="VehicleDiscounts">
+              <PropertyRef Name="VehicleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Driver_Quote">
+          <End Role="Quote" Type="QuotesDBModel.Store.Quote" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Driver" Type="QuotesDBModel.Store.Driver" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Quote">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Driver">
+              <PropertyRef Name="QuoteID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Driver_State1">
+          <End Role="State" Type="QuotesDBModel.Store.State" Multiplicity="1" />
+          <End Role="Driver" Type="QuotesDBModel.Store.Driver" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="State">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Driver">
+              <PropertyRef Name="DLState" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Quote_aspnet_Users">
+          <End Role="aspnet_Users" Type="QuotesDBModel.Store.aspnet_Users" Multiplicity="1" />
+          <End Role="Quote" Type="QuotesDBModel.Store.Quote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Quote">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Quote_State">
+          <End Role="State" Type="QuotesDBModel.Store.State" Multiplicity="1" />
+          <End Role="Quote" Type="QuotesDBModel.Store.Quote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="State">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Quote">
+              <PropertyRef Name="StateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Vehicle_Driver">
+          <End Role="Driver" Type="QuotesDBModel.Store.Driver" Multiplicity="1" />
+          <End Role="Vehicle" Type="QuotesDBModel.Store.Vehicle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Driver">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Vehicle">
+              <PropertyRef Name="PrimaryDriver" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Vehicle_Quote">
+          <End Role="Quote" Type="QuotesDBModel.Store.Quote" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Vehicle" Type="QuotesDBModel.Store.Vehicle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Quote">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Vehicle">
+              <PropertyRef Name="QuoteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="QuotesDBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="QuotesDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="aspnet_Users" EntityType="QuotesDBModel.aspnet_Users" />
+          <EntitySet Name="Discounts" EntityType="QuotesDBModel.Discount" />
+          <EntitySet Name="DiscountPerStates" EntityType="QuotesDBModel.DiscountPerState" />
+          <EntitySet Name="Drivers" EntityType="QuotesDBModel.Driver" />
+          <EntitySet Name="Quotes" EntityType="QuotesDBModel.Quote" />
+          <EntitySet Name="States" EntityType="QuotesDBModel.State" />
+          <EntitySet Name="Vehicles" EntityType="QuotesDBModel.Vehicle" />
+          <EntitySet Name="vw_aspnet_MembershipUsers" EntityType="QuotesDBModel.vw_aspnet_MembershipUsers" />
+          <EntitySet Name="vw_Quotes" EntityType="QuotesDBModel.vw_Quotes" />
+          <AssociationSet Name="FK_Quote_aspnet_Users" Association="QuotesDBModel.FK_Quote_aspnet_Users">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="Quote" EntitySet="Quotes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DiscountPerState_Discount" Association="QuotesDBModel.FK_DiscountPerState_Discount">
+            <End Role="Discount" EntitySet="Discounts" />
+            <End Role="DiscountPerState" EntitySet="DiscountPerStates" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DiscountPerState_State" Association="QuotesDBModel.FK_DiscountPerState_State">
+            <End Role="State" EntitySet="States" />
+            <End Role="DiscountPerState" EntitySet="DiscountPerStates" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Driver_Quote" Association="QuotesDBModel.FK_Driver_Quote">
+            <End Role="Quote" EntitySet="Quotes" />
+            <End Role="Driver" EntitySet="Drivers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Driver_State1" Association="QuotesDBModel.FK_Driver_State1">
+            <End Role="State" EntitySet="States" />
+            <End Role="Driver" EntitySet="Drivers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Vehicle_Driver" Association="QuotesDBModel.FK_Vehicle_Driver">
+            <End Role="Driver" EntitySet="Drivers" />
+            <End Role="Vehicle" EntitySet="Vehicles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Quote_State" Association="QuotesDBModel.FK_Quote_State">
+            <End Role="State" EntitySet="States" />
+            <End Role="Quote" EntitySet="Quotes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Vehicle_Quote" Association="QuotesDBModel.FK_Vehicle_Quote">
+            <End Role="Quote" EntitySet="Quotes" />
+            <End Role="Vehicle" EntitySet="Vehicles" />
+          </AssociationSet>
+          <EntitySet Name="aspnet_Membership" EntityType="QuotesDBModel.aspnet_Membership" />
+          <AssociationSet Name="FK__aspnet_Me__UserI__22AA2996" Association="QuotesDBModel.FK__aspnet_Me__UserI__22AA2996">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
+          </AssociationSet>
+          <EntitySet Name="QuoteDiscounts" EntityType="QuotesDBModel.QuoteDiscount" />
+          <EntitySet Name="VehicleDiscounts" EntityType="QuotesDBModel.VehicleDiscount" />
+          <AssociationSet Name="FK_DiscountsAppliedToQuote_DiscountPerState" Association="QuotesDBModel.FK_DiscountsAppliedToQuote_DiscountPerState">
+            <End Role="DiscountPerState" EntitySet="DiscountPerStates" />
+            <End Role="QuoteDiscount" EntitySet="QuoteDiscounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DiscountsAppliedToVehicle_DiscountPerState" Association="QuotesDBModel.FK_DiscountsAppliedToVehicle_DiscountPerState">
+            <End Role="DiscountPerState" EntitySet="DiscountPerStates" />
+            <End Role="VehicleDiscount" EntitySet="VehicleDiscounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DiscountsAppliedToQuote_Quote" Association="QuotesDBModel.FK_DiscountsAppliedToQuote_Quote">
+            <End Role="Quote" EntitySet="Quotes" />
+            <End Role="QuoteDiscount" EntitySet="QuoteDiscounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DiscountsAppliedToVehicle_Vehicle" Association="QuotesDBModel.FK_DiscountsAppliedToVehicle_Vehicle">
+            <End Role="Vehicle" EntitySet="Vehicles" />
+            <End Role="VehicleDiscount" EntitySet="VehicleDiscounts" />
+          </AssociationSet>
+          <EntitySet Name="vw_Drivers" EntityType="QuotesDBModel.vw_Drivers" />
+          <EntitySet Name="vw_Vehicles" EntityType="QuotesDBModel.vw_Vehicles" />
+          <EntitySet Name="DriverDiscounts" EntityType="QuotesDBModel.DriverDiscount" />
+          <AssociationSet Name="FK_DiscountsAppliedToDriver_DiscountPerState" Association="QuotesDBModel.FK_DiscountsAppliedToDriver_DiscountPerState">
+            <End Role="DiscountPerState" EntitySet="DiscountPerStates" />
+            <End Role="DriverDiscount" EntitySet="DriverDiscounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DiscountsAppliedToDriver_Person" Association="QuotesDBModel.FK_DiscountsAppliedToDriver_Person">
+            <End Role="Driver" EntitySet="Drivers" />
+            <End Role="DriverDiscount" EntitySet="DriverDiscounts" />
+          </AssociationSet>
+          <EntitySet Name="Configs" EntityType="QuotesDBModel.Config" />
+        </EntityContainer>
+        <ComplexType Name="ComplexType1">
+          <Property Type="String" Name="PriceVehicles" Nullable="false" />
+          <Property Type="String" Name="PriceDrivers" Nullable="false" />
+        </ComplexType>
+        <EntityType Name="aspnet_Users">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Type="Guid" Name="ApplicationId" Nullable="false" />
+          <Property Type="Guid" Name="UserId" Nullable="false" />
+          <Property Type="String" Name="UserName" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LoweredUserName" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MobileAlias" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsAnonymous" Nullable="false" />
+          <Property Type="DateTime" Name="LastActivityDate" Nullable="false" />
+          <NavigationProperty Name="Quotes" Relationship="QuotesDBModel.FK_Quote_aspnet_Users" FromRole="aspnet_Users" ToRole="Quote" />
+          <NavigationProperty Name="aspnet_Membership" Relationship="QuotesDBModel.FK__aspnet_Me__UserI__22AA2996" FromRole="aspnet_Users" ToRole="aspnet_Membership" />
+        </EntityType>
+        <EntityType Name="Discount">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="DiscountName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ScopeType" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DiscountPerStates" Relationship="QuotesDBModel.FK_DiscountPerState_Discount" FromRole="Discount" ToRole="DiscountPerState" />
+        </EntityType>
+        <EntityType Name="DiscountPerState">
+          <Key>
+            <PropertyRef Name="DiscountId" />
+            <PropertyRef Name="StateId" />
+          </Key>
+          <Property Type="Int32" Name="DiscountId" Nullable="false" />
+          <Property Type="Int32" Name="StateId" Nullable="false" />
+          <Property Type="Decimal" Name="Amount" Nullable="false" Precision="10" Scale="2" />
+          <NavigationProperty Name="Discount" Relationship="QuotesDBModel.FK_DiscountPerState_Discount" FromRole="DiscountPerState" ToRole="Discount" />
+          <NavigationProperty Name="State" Relationship="QuotesDBModel.FK_DiscountPerState_State" FromRole="DiscountPerState" ToRole="State" />
+          <NavigationProperty Name="QuoteDiscounts" Relationship="QuotesDBModel.FK_DiscountsAppliedToQuote_DiscountPerState" FromRole="DiscountPerState" ToRole="QuoteDiscount" />
+          <NavigationProperty Name="VehicleDiscounts" Relationship="QuotesDBModel.FK_DiscountsAppliedToVehicle_DiscountPerState" FromRole="DiscountPerState" ToRole="VehicleDiscount" />
+          <NavigationProperty Name="DriverDiscounts" Relationship="QuotesDBModel.FK_DiscountsAppliedToDriver_DiscountPerState" FromRole="DiscountPerState" ToRole="DriverDiscount" />
+          </EntityType>
+        <EntityType Name="Driver">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="FirstName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LastName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Ssn" MaxLength="9" FixedLength="true" Unicode="true" />
+          <Property Type="DateTime" Name="DateOfBirth" Nullable="false" />
+          <Property Type="String" Name="DriverLicenseNumber" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="DLState" Nullable="false" />
+          <Property Type="Boolean" Name="SafeDrivingSchool" Nullable="false" />
+          <Property Type="Int32" Name="QuoteID" Nullable="false" />
+          <NavigationProperty Name="Quote" Relationship="QuotesDBModel.FK_Driver_Quote" FromRole="Driver" ToRole="Quote" />
+          <NavigationProperty Name="State" Relationship="QuotesDBModel.FK_Driver_State1" FromRole="Driver" ToRole="State" />
+          <NavigationProperty Name="Vehicles" Relationship="QuotesDBModel.FK_Vehicle_Driver" FromRole="Driver" ToRole="Vehicle" />
+          <NavigationProperty Name="DriverDiscounts" Relationship="QuotesDBModel.FK_DiscountsAppliedToDriver_Person" FromRole="Driver" ToRole="DriverDiscount" />
+        </EntityType>
+        <EntityType Name="Quote">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="CustomerFirstName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerLastName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Address" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="City" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="StateId" Nullable="false" />
+          <Property Type="String" Name="Zip" Nullable="false" MaxLength="5" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="Ssn" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Type="DateTime" Name="DateOfBirth" Nullable="false" />
+          <Property Type="Boolean" Name="Incomplete" Nullable="false" />
+          <Property Type="String" Name="PreviousCarrier" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="ClaimsInPast5Yrs" Nullable="false" />
+          <Property Type="Boolean" Name="HasMovingViolations" Nullable="false" />
+          <Property Type="Boolean" Name="HasLessThan3YrsDriving" Nullable="false" />
+          <Property Type="Boolean" Name="ForceMultiCarDiscount" Nullable="false" />
+          <Property Type="DateTime" Name="DateCreated" Nullable="false" />
+          <Property Type="Guid" Name="UserId" Nullable="false" />
+          <Property Type="Decimal" Name="Price" Precision="10" Scale="2" />
+          <NavigationProperty Name="aspnet_Users" Relationship="QuotesDBModel.FK_Quote_aspnet_Users" FromRole="Quote" ToRole="aspnet_Users" />
+          <NavigationProperty Name="Drivers" Relationship="QuotesDBModel.FK_Driver_Quote" FromRole="Quote" ToRole="Driver" />
+          <NavigationProperty Name="State" Relationship="QuotesDBModel.FK_Quote_State" FromRole="Quote" ToRole="State" />
+          <NavigationProperty Name="Vehicles" Relationship="QuotesDBModel.FK_Vehicle_Quote" FromRole="Quote" ToRole="Vehicle" />
+          <NavigationProperty Name="QuoteDiscounts" Relationship="QuotesDBModel.FK_DiscountsAppliedToQuote_Quote" FromRole="Quote" ToRole="QuoteDiscount" />
+        </EntityType>
+        <EntityType Name="State">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="StateName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="StateCode" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="DiscountPerStates" Relationship="QuotesDBModel.FK_DiscountPerState_State" FromRole="State" ToRole="DiscountPerState" />
+          <NavigationProperty Name="Drivers" Relationship="QuotesDBModel.FK_Driver_State1" FromRole="State" ToRole="Driver" />
+          <NavigationProperty Name="Quotes" Relationship="QuotesDBModel.FK_Quote_State" FromRole="State" ToRole="Quote" />
+        </EntityType>
+        <EntityType Name="Vehicle">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Vin" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Make" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Model" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Year" Nullable="false" />
+          <Property Type="Decimal" Name="CurrentValue" Precision="10" Scale="2" />
+          <Property Type="Int32" Name="PrimaryDriver" Nullable="false" />
+          <Property Type="Int32" Name="AnnualMileage" />
+          <Property Type="Byte" Name="DaysDrivenPerWeek" />
+          <Property Type="Int16" Name="MilesDrivenToWork" />
+          <Property Type="Boolean" Name="AntiTheft" Nullable="false" />
+          <Property Type="Boolean" Name="AntiLock" Nullable="false" />
+          <Property Type="Boolean" Name="DaytimeRunningLights" Nullable="false" />
+          <Property Type="Boolean" Name="DifferentGarageAddress" Nullable="false" />
+          <Property Type="Boolean" Name="PassiveRestraints" Nullable="false" />
+          <Property Type="Boolean" Name="ReducedUsedDiscount" Nullable="false" />
+          <Property Type="Int32" Name="QuoteId" Nullable="false" />
+          <NavigationProperty Name="Driver" Relationship="QuotesDBModel.FK_Vehicle_Driver" FromRole="Vehicle" ToRole="Driver" />
+          <NavigationProperty Name="Quote" Relationship="QuotesDBModel.FK_Vehicle_Quote" FromRole="Vehicle" ToRole="Quote" />
+          <NavigationProperty Name="VehicleDiscounts" Relationship="QuotesDBModel.FK_DiscountsAppliedToVehicle_Vehicle" FromRole="Vehicle" ToRole="VehicleDiscount" />
+        </EntityType>
+        <EntityType Name="vw_aspnet_MembershipUsers">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="PasswordFormat" />
+            <PropertyRef Name="IsApproved" />
+            <PropertyRef Name="IsLockedOut" />
+            <PropertyRef Name="CreateDate" />
+            <PropertyRef Name="LastLoginDate" />
+            <PropertyRef Name="LastPasswordChangedDate" />
+            <PropertyRef Name="LastLockoutDate" />
+            <PropertyRef Name="FailedPasswordAttemptCount" />
+            <PropertyRef Name="FailedPasswordAttemptWindowStart" />
+            <PropertyRef Name="FailedPasswordAnswerAttemptCount" />
+            <PropertyRef Name="FailedPasswordAnswerAttemptWindowStart" />
+            <PropertyRef Name="ApplicationId" />
+            <PropertyRef Name="UserName" />
+            <PropertyRef Name="IsAnonymous" />
+            <PropertyRef Name="LastActivityDate" />
+          </Key>
+          <Property Type="Guid" Name="UserId" Nullable="false" />
+          <Property Type="Int32" Name="PasswordFormat" Nullable="false" />
+          <Property Type="String" Name="MobilePIN" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Email" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LoweredEmail" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PasswordQuestion" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PasswordAnswer" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsApproved" Nullable="false" />
+          <Property Type="Boolean" Name="IsLockedOut" Nullable="false" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="false" />
+          <Property Type="DateTime" Name="LastLoginDate" Nullable="false" />
+          <Property Type="DateTime" Name="LastPasswordChangedDate" Nullable="false" />
+          <Property Type="DateTime" Name="LastLockoutDate" Nullable="false" />
+          <Property Type="Int32" Name="FailedPasswordAttemptCount" Nullable="false" />
+          <Property Type="DateTime" Name="FailedPasswordAttemptWindowStart" Nullable="false" />
+          <Property Type="Int32" Name="FailedPasswordAnswerAttemptCount" Nullable="false" />
+          <Property Type="DateTime" Name="FailedPasswordAnswerAttemptWindowStart" Nullable="false" />
+          <Property Type="String" Name="Comment" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Guid" Name="ApplicationId" Nullable="false" />
+          <Property Type="String" Name="UserName" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MobileAlias" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsAnonymous" Nullable="false" />
+          <Property Type="DateTime" Name="LastActivityDate" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vw_Quotes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="CustomerFirstName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerLastName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="StateCode" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Type="Decimal" Name="Price" Precision="10" Scale="2" />
+          <Property Type="Int32" Name="Vehicles" />
+          <Property Type="Int32" Name="Drivers" />
+          <Property Type="Guid" Name="UserId" Nullable="false" />
+          <Property Type="DateTime" Name="DateCreated" Nullable="false" />
+          <Property Type="Boolean" Name="Incomplete" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Quote_aspnet_Users">
+          <End Type="QuotesDBModel.aspnet_Users" Role="aspnet_Users" Multiplicity="1" />
+          <End Type="QuotesDBModel.Quote" Role="Quote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Quote">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DiscountPerState_Discount">
+          <End Type="QuotesDBModel.Discount" Role="Discount" Multiplicity="1" />
+          <End Type="QuotesDBModel.DiscountPerState" Role="DiscountPerState" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Discount">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DiscountPerState">
+              <PropertyRef Name="DiscountId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DiscountPerState_State">
+          <End Type="QuotesDBModel.State" Role="State" Multiplicity="1" />
+          <End Type="QuotesDBModel.DiscountPerState" Role="DiscountPerState" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="State">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DiscountPerState">
+              <PropertyRef Name="StateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Driver_Quote">
+          <End Type="QuotesDBModel.Quote" Role="Quote" Multiplicity="1" />
+          <End Type="QuotesDBModel.Driver" Role="Driver" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Quote">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Driver">
+              <PropertyRef Name="QuoteID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Driver_State1">
+          <End Type="QuotesDBModel.State" Role="State" Multiplicity="1" />
+          <End Type="QuotesDBModel.Driver" Role="Driver" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="State">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Driver">
+              <PropertyRef Name="DLState" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Vehicle_Driver">
+          <End Type="QuotesDBModel.Driver" Role="Driver" Multiplicity="1" />
+          <End Type="QuotesDBModel.Vehicle" Role="Vehicle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Driver">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Vehicle">
+              <PropertyRef Name="PrimaryDriver" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Quote_State">
+          <End Type="QuotesDBModel.State" Role="State" Multiplicity="1" />
+          <End Type="QuotesDBModel.Quote" Role="Quote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="State">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Quote">
+              <PropertyRef Name="StateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Vehicle_Quote">
+          <End Type="QuotesDBModel.Quote" Role="Quote" Multiplicity="1" />
+          <End Type="QuotesDBModel.Vehicle" Role="Vehicle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Quote">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Vehicle">
+              <PropertyRef Name="QuoteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="aspnet_Membership">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Type="Guid" Name="ApplicationId" Nullable="false" />
+          <Property Type="Guid" Name="UserId" Nullable="false" />
+          <Property Type="String" Name="Password" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="PasswordFormat" Nullable="false" />
+          <Property Type="String" Name="PasswordSalt" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MobilePIN" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Email" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LoweredEmail" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PasswordQuestion" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PasswordAnswer" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsApproved" Nullable="false" />
+          <Property Type="Boolean" Name="IsLockedOut" Nullable="false" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="false" />
+          <Property Type="DateTime" Name="LastLoginDate" Nullable="false" />
+          <Property Type="DateTime" Name="LastPasswordChangedDate" Nullable="false" />
+          <Property Type="DateTime" Name="LastLockoutDate" Nullable="false" />
+          <Property Type="Int32" Name="FailedPasswordAttemptCount" Nullable="false" />
+          <Property Type="DateTime" Name="FailedPasswordAttemptWindowStart" Nullable="false" />
+          <Property Type="Int32" Name="FailedPasswordAnswerAttemptCount" Nullable="false" />
+          <Property Type="DateTime" Name="FailedPasswordAnswerAttemptWindowStart" Nullable="false" />
+          <Property Type="String" Name="Comment" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="aspnet_Users" Relationship="QuotesDBModel.FK__aspnet_Me__UserI__22AA2996" FromRole="aspnet_Membership" ToRole="aspnet_Users" />
+        </EntityType>
+        <Association Name="FK__aspnet_Me__UserI__22AA2996">
+          <End Type="QuotesDBModel.aspnet_Users" Role="aspnet_Users" Multiplicity="1" />
+          <End Type="QuotesDBModel.aspnet_Membership" Role="aspnet_Membership" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="aspnet_Membership">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="QuoteDiscount">
+          <Key>
+            <PropertyRef Name="DiscountId" />
+            <PropertyRef Name="StateId" />
+            <PropertyRef Name="QuoteId" />
+          </Key>
+          <Property Type="Int32" Name="DiscountId" Nullable="false" />
+          <Property Type="Int32" Name="StateId" Nullable="false" />
+          <Property Type="Int32" Name="QuoteId" Nullable="false" />
+          <Property Type="Decimal" Name="AppliedDiscountValue" Nullable="false" Precision="10" Scale="2" />
+          <NavigationProperty Name="DiscountPerState" Relationship="QuotesDBModel.FK_DiscountsAppliedToQuote_DiscountPerState" FromRole="QuoteDiscount" ToRole="DiscountPerState" />
+          <NavigationProperty Name="Quote" Relationship="QuotesDBModel.FK_DiscountsAppliedToQuote_Quote" FromRole="QuoteDiscount" ToRole="Quote" />
+        </EntityType>
+        <EntityType Name="VehicleDiscount">
+          <Key>
+            <PropertyRef Name="DiscountId" />
+            <PropertyRef Name="StateId" />
+            <PropertyRef Name="VehicleId" />
+          </Key>
+          <Property Type="Int32" Name="DiscountId" Nullable="false" />
+          <Property Type="Int32" Name="StateId" Nullable="false" />
+          <Property Type="Int32" Name="VehicleId" Nullable="false" />
+          <Property Type="Decimal" Name="AppliedDiscountValue" Nullable="false" Precision="10" Scale="0" />
+          <NavigationProperty Name="DiscountPerState" Relationship="QuotesDBModel.FK_DiscountsAppliedToVehicle_DiscountPerState" FromRole="VehicleDiscount" ToRole="DiscountPerState" />
+          <NavigationProperty Name="Vehicle" Relationship="QuotesDBModel.FK_DiscountsAppliedToVehicle_Vehicle" FromRole="VehicleDiscount" ToRole="Vehicle" />
+        </EntityType>
+        <Association Name="FK_DiscountsAppliedToQuote_DiscountPerState">
+          <End Type="QuotesDBModel.DiscountPerState" Role="DiscountPerState" Multiplicity="1" />
+          <End Type="QuotesDBModel.QuoteDiscount" Role="QuoteDiscount" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DiscountPerState">
+              <PropertyRef Name="DiscountId" />
+              <PropertyRef Name="StateId" />
+            </Principal>
+            <Dependent Role="QuoteDiscount">
+              <PropertyRef Name="DiscountId" />
+              <PropertyRef Name="StateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DiscountsAppliedToVehicle_DiscountPerState">
+          <End Type="QuotesDBModel.DiscountPerState" Role="DiscountPerState" Multiplicity="1" />
+          <End Type="QuotesDBModel.VehicleDiscount" Role="VehicleDiscount" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DiscountPerState">
+              <PropertyRef Name="DiscountId" />
+              <PropertyRef Name="StateId" />
+            </Principal>
+            <Dependent Role="VehicleDiscount">
+              <PropertyRef Name="DiscountId" />
+              <PropertyRef Name="StateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DiscountsAppliedToQuote_Quote">
+          <End Type="QuotesDBModel.Quote" Role="Quote" Multiplicity="1" />
+          <End Type="QuotesDBModel.QuoteDiscount" Role="QuoteDiscount" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Quote">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="QuoteDiscount">
+              <PropertyRef Name="QuoteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DiscountsAppliedToVehicle_Vehicle">
+          <End Type="QuotesDBModel.Vehicle" Role="Vehicle" Multiplicity="1" />
+          <End Type="QuotesDBModel.VehicleDiscount" Role="VehicleDiscount" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vehicle">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="VehicleDiscount">
+              <PropertyRef Name="VehicleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="vw_Drivers">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="FirstName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LastName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Ssn" MaxLength="9" FixedLength="true" Unicode="true" />
+          <Property Type="DateTime" Name="DateOfBirth" Nullable="false" />
+          <Property Type="Int32" Name="Age" />
+          <Property Type="String" Name="DriverLicenseNumber" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="DLState" Nullable="false" />
+          <Property Type="String" Name="StateCode" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Type="Boolean" Name="SafeDrivingSchool" Nullable="false" />
+          <Property Type="Int32" Name="QuoteID" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vw_Vehicles">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Vin" />
+            <PropertyRef Name="Make" />
+            <PropertyRef Name="Model" />
+            <PropertyRef Name="Year" />
+            <PropertyRef Name="PrimaryDriver" />
+            <PropertyRef Name="AntiTheft" />
+            <PropertyRef Name="AntiLock" />
+            <PropertyRef Name="DaytimeRunningLights" />
+            <PropertyRef Name="DifferentGarageAddress" />
+            <PropertyRef Name="PassiveRestraints" />
+            <PropertyRef Name="ReducedUsedDiscount" />
+            <PropertyRef Name="QuoteId" />
+          </Key>
+          <Property Type="String" Name="PrimaryDriverName" MaxLength="151" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Vin" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Make" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Model" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Year" Nullable="false" />
+          <Property Type="Decimal" Name="CurrentValue" Precision="10" Scale="2" />
+          <Property Type="Int32" Name="PrimaryDriver" Nullable="false" />
+          <Property Type="Int32" Name="AnnualMileage" />
+          <Property Type="Byte" Name="DaysDrivenPerWeek" />
+          <Property Type="Int16" Name="MilesDrivenToWork" />
+          <Property Type="Boolean" Name="AntiTheft" Nullable="false" />
+          <Property Type="Boolean" Name="AntiLock" Nullable="false" />
+          <Property Type="Boolean" Name="DaytimeRunningLights" Nullable="false" />
+          <Property Type="Boolean" Name="DifferentGarageAddress" Nullable="false" />
+          <Property Type="Boolean" Name="PassiveRestraints" Nullable="false" />
+          <Property Type="Boolean" Name="ReducedUsedDiscount" Nullable="false" />
+          <Property Type="Int32" Name="QuoteId" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DriverDiscount">
+          <Key>
+            <PropertyRef Name="DiscountId" />
+            <PropertyRef Name="StateId" />
+            <PropertyRef Name="DriverId" />
+          </Key>
+          <Property Type="Int32" Name="DiscountId" Nullable="false" />
+          <Property Type="Int32" Name="StateId" Nullable="false" />
+          <Property Type="Int32" Name="DriverId" Nullable="false" />
+          <Property Type="Decimal" Name="AppliedDiscountValue" Nullable="false" Precision="10" Scale="2" />
+          <NavigationProperty Name="DiscountPerState" Relationship="QuotesDBModel.FK_DiscountsAppliedToDriver_DiscountPerState" FromRole="DriverDiscount" ToRole="DiscountPerState" />
+          <NavigationProperty Name="Driver" Relationship="QuotesDBModel.FK_DiscountsAppliedToDriver_Person" FromRole="DriverDiscount" ToRole="Driver" />
+        </EntityType>
+        <Association Name="FK_DiscountsAppliedToDriver_DiscountPerState">
+          <End Type="QuotesDBModel.DiscountPerState" Role="DiscountPerState" Multiplicity="1" />
+          <End Type="QuotesDBModel.DriverDiscount" Role="DriverDiscount" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DiscountPerState">
+              <PropertyRef Name="DiscountId" />
+              <PropertyRef Name="StateId" />
+            </Principal>
+            <Dependent Role="DriverDiscount">
+              <PropertyRef Name="DiscountId" />
+              <PropertyRef Name="StateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DiscountsAppliedToDriver_Person">
+          <End Type="QuotesDBModel.Driver" Role="Driver" Multiplicity="1" />
+          <End Type="QuotesDBModel.DriverDiscount" Role="DriverDiscount" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Driver">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DriverDiscount">
+              <PropertyRef Name="DriverId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Config">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Value" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="QuotesDBModelStoreContainer" CdmEntityContainer="QuotesDBEntities">
+          <EntitySetMapping Name="aspnet_Users">
+            <EntityTypeMapping TypeName="QuotesDBModel.aspnet_Users">
+              <MappingFragment StoreEntitySet="aspnet_Users">
+                <ScalarProperty Name="LastActivityDate" ColumnName="LastActivityDate" />
+                <ScalarProperty Name="IsAnonymous" ColumnName="IsAnonymous" />
+                <ScalarProperty Name="MobileAlias" ColumnName="MobileAlias" />
+                <ScalarProperty Name="LoweredUserName" ColumnName="LoweredUserName" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Discounts">
+            <EntityTypeMapping TypeName="QuotesDBModel.Discount">
+              <MappingFragment StoreEntitySet="Discount">
+                <ScalarProperty Name="ScopeType" ColumnName="ScopeType" />
+                <ScalarProperty Name="DiscountName" ColumnName="DiscountName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DiscountPerStates">
+            <EntityTypeMapping TypeName="QuotesDBModel.DiscountPerState">
+              <MappingFragment StoreEntitySet="DiscountPerState">
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="StateId" ColumnName="StateId" />
+                <ScalarProperty Name="DiscountId" ColumnName="DiscountId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Drivers">
+            <EntityTypeMapping TypeName="QuotesDBModel.Driver">
+              <MappingFragment StoreEntitySet="Driver">
+                <ScalarProperty Name="QuoteID" ColumnName="QuoteID" />
+                <ScalarProperty Name="SafeDrivingSchool" ColumnName="SafeDrivingSchool" />
+                <ScalarProperty Name="DLState" ColumnName="DLState" />
+                <ScalarProperty Name="DriverLicenseNumber" ColumnName="DriverLicenseNumber" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="Ssn" ColumnName="Ssn" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Quotes">
+            <EntityTypeMapping TypeName="QuotesDBModel.Quote">
+              <MappingFragment StoreEntitySet="Quote">
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="ForceMultiCarDiscount" ColumnName="ForceMultiCarDiscount" />
+                <ScalarProperty Name="HasLessThan3YrsDriving" ColumnName="HasLessThan3YrsDriving" />
+                <ScalarProperty Name="HasMovingViolations" ColumnName="HasMovingViolations" />
+                <ScalarProperty Name="ClaimsInPast5Yrs" ColumnName="ClaimsInPast5Yrs" />
+                <ScalarProperty Name="PreviousCarrier" ColumnName="PreviousCarrier" />
+                <ScalarProperty Name="Incomplete" ColumnName="Incomplete" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="Ssn" ColumnName="Ssn" />
+                <ScalarProperty Name="Zip" ColumnName="Zip" />
+                <ScalarProperty Name="StateId" ColumnName="StateId" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="CustomerLastName" ColumnName="CustomerLastName" />
+                <ScalarProperty Name="CustomerFirstName" ColumnName="CustomerFirstName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="States">
+            <EntityTypeMapping TypeName="QuotesDBModel.State">
+              <MappingFragment StoreEntitySet="State">
+                <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+                <ScalarProperty Name="StateName" ColumnName="StateName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vehicles">
+            <EntityTypeMapping TypeName="QuotesDBModel.Vehicle">
+              <MappingFragment StoreEntitySet="Vehicle">
+                <ScalarProperty Name="QuoteId" ColumnName="QuoteId" />
+                <ScalarProperty Name="ReducedUsedDiscount" ColumnName="ReducedUsedDiscount" />
+                <ScalarProperty Name="PassiveRestraints" ColumnName="PassiveRestraints" />
+                <ScalarProperty Name="DifferentGarageAddress" ColumnName="DifferentGarageAddress" />
+                <ScalarProperty Name="DaytimeRunningLights" ColumnName="DaytimeRunningLights" />
+                <ScalarProperty Name="AntiLock" ColumnName="AntiLock" />
+                <ScalarProperty Name="AntiTheft" ColumnName="AntiTheft" />
+                <ScalarProperty Name="MilesDrivenToWork" ColumnName="MilesDrivenToWork" />
+                <ScalarProperty Name="DaysDrivenPerWeek" ColumnName="DaysDrivenPerWeek" />
+                <ScalarProperty Name="AnnualMileage" ColumnName="AnnualMileage" />
+                <ScalarProperty Name="PrimaryDriver" ColumnName="PrimaryDriver" />
+                <ScalarProperty Name="CurrentValue" ColumnName="CurrentValue" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="Make" ColumnName="Make" />
+                <ScalarProperty Name="Vin" ColumnName="Vin" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_aspnet_MembershipUsers">
+            <EntityTypeMapping TypeName="QuotesDBModel.vw_aspnet_MembershipUsers">
+              <MappingFragment StoreEntitySet="vw_aspnet_MembershipUsers">
+                <ScalarProperty Name="LastActivityDate" ColumnName="LastActivityDate" />
+                <ScalarProperty Name="IsAnonymous" ColumnName="IsAnonymous" />
+                <ScalarProperty Name="MobileAlias" ColumnName="MobileAlias" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="FailedPasswordAnswerAttemptWindowStart" ColumnName="FailedPasswordAnswerAttemptWindowStart" />
+                <ScalarProperty Name="FailedPasswordAnswerAttemptCount" ColumnName="FailedPasswordAnswerAttemptCount" />
+                <ScalarProperty Name="FailedPasswordAttemptWindowStart" ColumnName="FailedPasswordAttemptWindowStart" />
+                <ScalarProperty Name="FailedPasswordAttemptCount" ColumnName="FailedPasswordAttemptCount" />
+                <ScalarProperty Name="LastLockoutDate" ColumnName="LastLockoutDate" />
+                <ScalarProperty Name="LastPasswordChangedDate" ColumnName="LastPasswordChangedDate" />
+                <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="IsLockedOut" ColumnName="IsLockedOut" />
+                <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+                <ScalarProperty Name="PasswordAnswer" ColumnName="PasswordAnswer" />
+                <ScalarProperty Name="PasswordQuestion" ColumnName="PasswordQuestion" />
+                <ScalarProperty Name="LoweredEmail" ColumnName="LoweredEmail" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="MobilePIN" ColumnName="MobilePIN" />
+                <ScalarProperty Name="PasswordFormat" ColumnName="PasswordFormat" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_Quotes">
+            <EntityTypeMapping TypeName="QuotesDBModel.vw_Quotes">
+              <MappingFragment StoreEntitySet="vw_Quotes">
+                <ScalarProperty Name="Incomplete" ColumnName="Incomplete" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Drivers" ColumnName="Drivers" />
+                <ScalarProperty Name="Vehicles" ColumnName="Vehicles" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+                <ScalarProperty Name="CustomerLastName" ColumnName="CustomerLastName" />
+                <ScalarProperty Name="CustomerFirstName" ColumnName="CustomerFirstName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="aspnet_Membership">
+            <EntityTypeMapping TypeName="QuotesDBModel.aspnet_Membership">
+              <MappingFragment StoreEntitySet="aspnet_Membership">
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="FailedPasswordAnswerAttemptWindowStart" ColumnName="FailedPasswordAnswerAttemptWindowStart" />
+                <ScalarProperty Name="FailedPasswordAnswerAttemptCount" ColumnName="FailedPasswordAnswerAttemptCount" />
+                <ScalarProperty Name="FailedPasswordAttemptWindowStart" ColumnName="FailedPasswordAttemptWindowStart" />
+                <ScalarProperty Name="FailedPasswordAttemptCount" ColumnName="FailedPasswordAttemptCount" />
+                <ScalarProperty Name="LastLockoutDate" ColumnName="LastLockoutDate" />
+                <ScalarProperty Name="LastPasswordChangedDate" ColumnName="LastPasswordChangedDate" />
+                <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="IsLockedOut" ColumnName="IsLockedOut" />
+                <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+                <ScalarProperty Name="PasswordAnswer" ColumnName="PasswordAnswer" />
+                <ScalarProperty Name="PasswordQuestion" ColumnName="PasswordQuestion" />
+                <ScalarProperty Name="LoweredEmail" ColumnName="LoweredEmail" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="MobilePIN" ColumnName="MobilePIN" />
+                <ScalarProperty Name="PasswordSalt" ColumnName="PasswordSalt" />
+                <ScalarProperty Name="PasswordFormat" ColumnName="PasswordFormat" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="QuoteDiscounts">
+            <EntityTypeMapping TypeName="QuotesDBModel.QuoteDiscount">
+              <MappingFragment StoreEntitySet="QuoteDiscounts">
+                <ScalarProperty Name="AppliedDiscountValue" ColumnName="AppliedDiscountValue" />
+                <ScalarProperty Name="QuoteId" ColumnName="QuoteId" />
+                <ScalarProperty Name="StateId" ColumnName="StateId" />
+                <ScalarProperty Name="DiscountId" ColumnName="DiscountId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VehicleDiscounts">
+            <EntityTypeMapping TypeName="QuotesDBModel.VehicleDiscount">
+              <MappingFragment StoreEntitySet="VehicleDiscounts">
+                <ScalarProperty Name="AppliedDiscountValue" ColumnName="AppliedDiscountValue" />
+                <ScalarProperty Name="VehicleId" ColumnName="VehicleId" />
+                <ScalarProperty Name="StateId" ColumnName="StateId" />
+                <ScalarProperty Name="DiscountId" ColumnName="DiscountId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_Drivers">
+            <EntityTypeMapping TypeName="QuotesDBModel.vw_Drivers">
+              <MappingFragment StoreEntitySet="vw_Drivers">
+                <ScalarProperty Name="QuoteID" ColumnName="QuoteID" />
+                <ScalarProperty Name="SafeDrivingSchool" ColumnName="SafeDrivingSchool" />
+                <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+                <ScalarProperty Name="DLState" ColumnName="DLState" />
+                <ScalarProperty Name="DriverLicenseNumber" ColumnName="DriverLicenseNumber" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="Ssn" ColumnName="Ssn" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_Vehicles">
+            <EntityTypeMapping TypeName="QuotesDBModel.vw_Vehicles">
+              <MappingFragment StoreEntitySet="vw_Vehicles">
+                <ScalarProperty Name="QuoteId" ColumnName="QuoteId" />
+                <ScalarProperty Name="ReducedUsedDiscount" ColumnName="ReducedUsedDiscount" />
+                <ScalarProperty Name="PassiveRestraints" ColumnName="PassiveRestraints" />
+                <ScalarProperty Name="DifferentGarageAddress" ColumnName="DifferentGarageAddress" />
+                <ScalarProperty Name="DaytimeRunningLights" ColumnName="DaytimeRunningLights" />
+                <ScalarProperty Name="AntiLock" ColumnName="AntiLock" />
+                <ScalarProperty Name="AntiTheft" ColumnName="AntiTheft" />
+                <ScalarProperty Name="MilesDrivenToWork" ColumnName="MilesDrivenToWork" />
+                <ScalarProperty Name="DaysDrivenPerWeek" ColumnName="DaysDrivenPerWeek" />
+                <ScalarProperty Name="AnnualMileage" ColumnName="AnnualMileage" />
+                <ScalarProperty Name="PrimaryDriver" ColumnName="PrimaryDriver" />
+                <ScalarProperty Name="CurrentValue" ColumnName="CurrentValue" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="Make" ColumnName="Make" />
+                <ScalarProperty Name="Vin" ColumnName="Vin" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="PrimaryDriverName" ColumnName="PrimaryDriverName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DriverDiscounts">
+            <EntityTypeMapping TypeName="QuotesDBModel.DriverDiscount">
+              <MappingFragment StoreEntitySet="DriverDiscounts">
+                <ScalarProperty Name="AppliedDiscountValue" ColumnName="AppliedDiscountValue" />
+                <ScalarProperty Name="DriverId" ColumnName="DriverId" />
+                <ScalarProperty Name="StateId" ColumnName="StateId" />
+                <ScalarProperty Name="DiscountId" ColumnName="DiscountId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Configs">
+            <EntityTypeMapping TypeName="QuotesDBModel.Config">
+              <MappingFragment StoreEntitySet="Config">
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="QuoteModel" ZoomLevel="75" DisplayType="false">
+        <EntityTypeShape EntityType="QuotesDBModel.aspnet_Users" Width="1.5" PointX="0.75" PointY="5.5" Height="2.5571907552083246" />
+        <EntityTypeShape EntityType="QuotesDBModel.Discount" Width="1.5" PointX="0.75" PointY="13.875" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="QuotesDBModel.DiscountPerState" Width="1.5" PointX="3.375" PointY="10.625" Height="2.5571907552083388" />
+        <EntityTypeShape EntityType="QuotesDBModel.Driver" Width="1.5" PointX="6" PointY="10" Height="3.5186979166666674" />
+        <EntityTypeShape EntityType="QuotesDBModel.Quote" Width="1.5" PointX="3" PointY="4" Height="5.4417122395833388" />
+        <EntityTypeShape EntityType="QuotesDBModel.State" Width="1.5" PointX="0.75" PointY="10.625" Height="2.1725878906250102" />
+        <EntityTypeShape EntityType="QuotesDBModel.Vehicle" Width="1.5" PointX="11.25" PointY="6.25" Height="4.8648079427083246" />
+        <EntityTypeShape EntityType="QuotesDBModel.vw_aspnet_MembershipUsers" Width="1.5" PointX="7.75" PointY="0.75" Height="5.4417122395833246" />
+        <EntityTypeShape EntityType="QuotesDBModel.vw_Quotes" Width="1.5" PointX="3.25" PointY="0.625" Height="2.9417936197916674" />
+        <AssociationConnector Association="QuotesDBModel.FK_Quote_aspnet_Users" >
+          <ConnectorPoint PointX="2.25" PointY="6.87474609375" />
+          <ConnectorPoint PointX="2.5416666666666665" PointY="6.8747460937499989" />
+          <ConnectorPoint PointX="2.7083333333333335" PointY="6.87474609375" />
+          <ConnectorPoint PointX="3" PointY="6.87474609375" />
+        </AssociationConnector>
+        <AssociationConnector Association="QuotesDBModel.FK_DiscountPerState_Discount" >
+          <ConnectorPoint PointX="2.25" PointY="14.03125" />
+          <ConnectorPoint PointX="2.6041666666666665" PointY="14.03125" />
+          <ConnectorPoint PointX="2.7708333333333335" PointY="14.03125" />
+          <ConnectorPoint PointX="4.71875" PointY="14.03125" />
+          <ConnectorPoint PointX="4.71875" PointY="13.182190755208339" />
+        </AssociationConnector>
+        <AssociationConnector Association="QuotesDBModel.FK_DiscountPerState_State" >
+          <ConnectorPoint PointX="2.25" PointY="11.711293945312505" />
+          <ConnectorPoint PointX="2.6041666666666665" PointY="11.711293945312505" />
+          <ConnectorPoint PointX="2.7708333333333335" PointY="11.711293945312505" />
+          <ConnectorPoint PointX="3.375" PointY="11.711293945312505" />
+        </AssociationConnector>
+        <AssociationConnector Association="QuotesDBModel.FK_Driver_Quote" >
+          <ConnectorPoint PointX="4.5" PointY="5.21875" />
+          <ConnectorPoint PointX="7.15625" PointY="5.21875" />
+          <ConnectorPoint PointX="7.15625" PointY="10" />
+        </AssociationConnector>
+        <AssociationConnector Association="QuotesDBModel.FK_Driver_State1" >
+          <ConnectorPoint PointX="1.5" PointY="12.79758789062501" />
+          <ConnectorPoint PointX="1.5" PointY="13.381694335937503" />
+          <ConnectorPoint PointX="2.6041666666666665" PointY="13.381694335937503" />
+          <ConnectorPoint PointX="2.7708333333333335" PointY="13.381694335937503" />
+          <ConnectorPoint PointX="3.9322896666666662" PointY="13.381694335937503" />
+          <ConnectorPoint PointX="4.0989563333333328" PointY="13.381694335937503" />
+          <ConnectorPoint PointX="4.635416666666667" PointY="13.381694335937503" />
+          <ConnectorPoint PointX="4.802083333333333" PointY="13.381694335937503" />
+          <ConnectorPoint PointX="6" PointY="13.381694335937503" />
+        </AssociationConnector>
+        <AssociationConnector Association="QuotesDBModel.FK_Vehicle_Driver" >
+          <ConnectorPoint PointX="7.5" PointY="10.46875" />
+          <ConnectorPoint PointX="10.916666666666666" PointY="10.46875" />
+          <ConnectorPoint PointX="11.083333333333334" PointY="10.46875" />
+          <ConnectorPoint PointX="11.25" PointY="10.46875" />
+        </AssociationConnector>
+        <AssociationConnector Association="QuotesDBModel.FK_Quote_State" >
+          <ConnectorPoint PointX="2.25" PointY="10.626152846153847" />
+          <ConnectorPoint PointX="2.625" PointY="10.251152846153847" />
+          <ConnectorPoint PointX="2.625" PointY="5.4061210468749987" />
+          <ConnectorPoint PointX="3" PointY="5.4061210468749987" />
+        </AssociationConnector>
+        <AssociationConnector Association="QuotesDBModel.FK_Vehicle_Quote" >
+          <ConnectorPoint PointX="4.5" PointY="9.2759000651041745" />
+          <ConnectorPoint PointX="5.166666666666667" PointY="9.2759000651041745" />
+          <ConnectorPoint PointX="5.333333333333333" PointY="9.2759000651041745" />
+          <ConnectorPoint PointX="7.072916666666667" PointY="9.2759000651041745" />
+          <ConnectorPoint PointX="7.239583333333333" PointY="9.2759000651041745" />
+          <ConnectorPoint PointX="11.25" PointY="9.2759000651041745" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="QuotesDBModel.aspnet_Membership" Width="1.5" PointX="3" PointY="14.25" Height="5.2494108072916674" />
+        <AssociationConnector Association="QuotesDBModel.FK__aspnet_Me__UserI__22AA2996" >
+          <ConnectorPoint PointX="2.25" PointY="8.1871834951923077" />
+          <ConnectorPoint PointX="2.5660744349011213" PointY="8.5032579300934277" />
+          <ConnectorPoint PointX="2.6839255650988791" PointY="8.621109060291186" />
+          <ConnectorPoint PointX="2.6875" PointY="8.6246834951923077" />
+          <ConnectorPoint PointX="2.6875" PointY="16.874705403645834" />
+          <ConnectorPoint PointX="3" PointY="16.874705403645834" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="QuotesDBModel.QuoteDiscount" Width="1.5" PointX="5.25" PointY="6.5" Height="2.1725878906250102" />
+        <EntityTypeShape EntityType="QuotesDBModel.VehicleDiscount" Width="1.5" PointX="13.5" PointY="8.625" Height="2.1725878906249818" />
+        <AssociationConnector Association="QuotesDBModel.FK_DiscountsAppliedToQuote_DiscountPerState" >
+          <ConnectorPoint PointX="4.875" PointY="10.626152846153847" />
+          <ConnectorPoint PointX="5.25" PointY="10.251152846153847" />
+          <ConnectorPoint PointX="5.25" PointY="8.98508789062501" />
+          <ConnectorPoint PointX="4.9386528461538468" PointY="8.98508789062501" />
+          <ConnectorPoint PointX="5.2511528461538459" PointY="8.67258789062501" />
+        </AssociationConnector>
+        <AssociationConnector Association="QuotesDBModel.FK_DiscountsAppliedToVehicle_DiscountPerState" >
+          <ConnectorPoint PointX="4.125" PointY="10.625" />
+          <ConnectorPoint PointX="4.125" PointY="9.7112939453124909" />
+          <ConnectorPoint PointX="5.166666666666667" PointY="9.7112939453124909" />
+          <ConnectorPoint PointX="5.333333333333333" PointY="9.7112939453124909" />
+          <ConnectorPoint PointX="7.072916666666667" PointY="9.7112939453124909" />
+          <ConnectorPoint PointX="7.239583333333333" PointY="9.7112939453124909" />
+          <ConnectorPoint PointX="11" PointY="9.7112939453124909" />
+          <ConnectorPoint PointX="11" PointY="11.364807942708325" />
+          <ConnectorPoint PointX="13.125" PointY="11.364807942708325" />
+          <ConnectorPoint PointX="13.125" PointY="9.7112939453124909" />
+          <ConnectorPoint PointX="13.5" PointY="9.7112939453124909" />
+        </AssociationConnector>
+        <AssociationConnector Association="QuotesDBModel.FK_DiscountsAppliedToQuote_Quote" >
+          <ConnectorPoint PointX="4.5" PointY="6.9806469726562526" />
+          <ConnectorPoint PointX="5.25" PointY="6.9806469726562526" />
+        </AssociationConnector>
+        <AssociationConnector Association="QuotesDBModel.FK_DiscountsAppliedToVehicle_Vehicle" >
+          <ConnectorPoint PointX="12.75" PointY="9.1056469726562455" />
+          <ConnectorPoint PointX="13.5" PointY="9.1056469726562455" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="QuotesDBModel.vw_Drivers" Width="1.5" PointX="5.375" PointY="0.625" Height="3.1340950520833388" />
+        <EntityTypeShape EntityType="QuotesDBModel.vw_Vehicles" Width="1.5" PointX="10.375" PointY="0.75" Height="4.4802050781250031" />
+        <EntityTypeShape EntityType="QuotesDBModel.DriverDiscount" Width="1.5" PointX="8.75" PointY="11" Height="2.172587890624996" />
+        <AssociationConnector Association="QuotesDBModel.FK_DiscountsAppliedToDriver_DiscountPerState" >
+          <ConnectorPoint PointX="4.015623" PointY="13.182190755208339" />
+          <ConnectorPoint PointX="4.015623" PointY="13.768697916666667" />
+          <ConnectorPoint PointX="4.635416666666667" PointY="13.768697916666667" />
+          <ConnectorPoint PointX="4.802083333333333" PointY="13.768697916666667" />
+          <ConnectorPoint PointX="8.375" PointY="13.768697916666667" />
+          <ConnectorPoint PointX="8.375" PointY="12.086293945312498" />
+          <ConnectorPoint PointX="8.75" PointY="12.086293945312498" />
+        </AssociationConnector>
+        <AssociationConnector Association="QuotesDBModel.FK_DiscountsAppliedToDriver_Person" >
+          <ConnectorPoint PointX="7.5" PointY="11.480646972656249" />
+          <ConnectorPoint PointX="8.75" PointY="11.480646972656249" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="QuotesDBModel.Config" Width="1.5" PointX="0.75" PointY="0.75" Height="1.5956835937500031" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
